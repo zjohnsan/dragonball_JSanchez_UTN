@@ -55,16 +55,16 @@ function App() {
     if (items.length > 0) {
       filtrarPersonajes();
     }
-  }, [filtroNombre, filtroRaza, ordenPor, items]);
+  }, [filtroNombre, filtroRaza, ordenPor, items])
 
   const razasUnicas = [...new Set(items.map(item => 
     item.race || item.species || 'Desconocido'
-  ).filter(Boolean))];
+  ).filter(Boolean))]
 
   const limpiarFiltros = () => {
-    setFiltroNombre('');
-    setFiltroRaza('');
-    setOrdenPor('name');
+    setFiltroNombre('')
+    setFiltroRaza('')
+    setOrdenPor('name')
   };
 
   if (loading) {
@@ -80,7 +80,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-900 p-4">
-      {/* Header simple */}
+      
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold text-white mb-2">
           DRAGON BALL
@@ -88,7 +88,7 @@ function App() {
         <p className="text-gray-400">Personajes</p>
       </div>
 
-      {/* Filtros simples */}
+      
       <div className="max-w-4xl mx-auto mb-8 p-4 bg-gray-800 rounded-lg">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <input
@@ -134,7 +134,7 @@ function App() {
         </div>
       </div>
 
-      {/* Contenido */}
+     
       <div className="max-w-7xl mx-auto">
         {itemsFiltrados.length > 0 ? (
           <Contenedor>
